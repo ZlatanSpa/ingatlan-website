@@ -1416,8 +1416,11 @@
         </svg>
     </button>
 
-    <!-- Rejtett YouTube lejátszó -->
-    <div class="music-player" id="musicPlayer"></div>
+    <!-- HTML5 Audio lejátszó -->
+    <audio id="musicPlayer" loop preload="auto">
+        <source src="zene/royalty-free-jazz-sunset-reverie-360384.mp3" type="audio/mpeg">
+        A böngésző nem támogatja az audio elemet.
+    </audio>
 
     <!-- ====================================
          HEADER ÉS NAVIGÁCIÓ
@@ -2530,106 +2533,55 @@
         }));
 
         // =====================================
-        // ZENEI VEZÉRLŐ - YOUTUBE API
+        // ZENEI VEZÉRLŐ - HTML5 AUDIO
         // =====================================
 
-        let player;
-        let isMuted = true;
-        let playerReady = false;
-
-        // YouTube IFrame API betöltése
-        const tag = document.createElement('script');
-        tag.src = 'https://www.youtube.com/iframe_api';
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        // YouTube player inicializálása (globális függvény kell)
-        window.onYouTubeIframeAPIReady = function() {
-            player = new YT.Player('musicPlayer', {
-                height: '0',
-                width: '0',
-                videoId: 'Dx5qFachd3A', // Smooth Night Jazz - Relaxing Jazz Music
-                playerVars: {
-                    autoplay: 1,
-                    loop: 1,
-                    controls: 0,
-                    playlist: 'Dx5qFachd3A',
-                    enablejsapi: 1,
-                    origin: window.location.origin
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        };
-
-        // Player kész
-        function onPlayerReady(event) {
-            console.log('YouTube player ready');
-            playerReady = true;
-            // Megpróbáljuk elindítani némítva
-            try {
-                event.target.mute();
-                event.target.setVolume(0);
-                event.target.playVideo();
-                console.log('Music started (muted)');
-            } catch (e) {
-                console.error('Error starting music:', e);
-            }
-        }
-
-        // Player állapot változás
-        function onPlayerStateChange(event) {
-            console.log('Player state:', event.data);
-            if (event.data === YT.PlayerState.ENDED) {
-                player.playVideo();
-            }
-        }
-
-        // Hang ki/be kapcsoló gomb
+        const audioPlayer = document.getElementById('musicPlayer');
         const musicControl = document.getElementById('musicControl');
         const soundOnIcon = document.getElementById('soundOnIcon');
         const soundOffIcon = document.getElementById('soundOffIcon');
 
-        // Kezdeti állapot: némítva
-        musicControl.classList.add('muted');
+        // Kezdeti beállítások
+        audioPlayer.volume = 0.35; // 35% hangerő
+        let isPlaying = false;
+
+        // Kezdeti állapot: kikapcsolt ikon
         soundOffIcon.style.display = 'none';
         soundOnIcon.style.display = 'block';
 
-        musicControl.addEventListener('click', () => {
-            if (!player || !playerReady) {
-                console.log('Player not ready yet');
-                return;
-            }
+        // Automatikus indítás amikor az oldal betöltődött
+        window.addEventListener('load', () => {
+            // Próbáljuk meg elindítani
+            audioPlayer.play().then(() => {
+                isPlaying = true;
+                console.log('Music started automatically');
+            }).catch(e => {
+                console.log('Autoplay blocked, user interaction needed');
+                // Ha blokkolva van, első kattintásra fog elindulni
+            });
+        });
 
-            try {
-                if (isMuted) {
-                    // Hang bekapcsolása
-                    player.unMute();
-                    player.setVolume(35);
+        // Hang ki/be kapcsoló gomb
+        musicControl.addEventListener('click', () => {
+            if (isPlaying) {
+                // Zene megállítása
+                audioPlayer.pause();
+                soundOnIcon.style.display = 'none';
+                soundOffIcon.style.display = 'block';
+                musicControl.classList.add('muted');
+                isPlaying = false;
+                console.log('Music paused');
+            } else {
+                // Zene indítása
+                audioPlayer.play().then(() => {
                     soundOnIcon.style.display = 'block';
                     soundOffIcon.style.display = 'none';
                     musicControl.classList.remove('muted');
-                    isMuted = false;
-                    console.log('Music unmuted, volume: 35%');
-
-                    // Biztosítjuk hogy játszik
-                    if (player.getPlayerState() !== YT.PlayerState.PLAYING) {
-                        player.playVideo();
-                    }
-                } else {
-                    // Hang kikapcsolása
-                    player.mute();
-                    player.setVolume(0);
-                    soundOnIcon.style.display = 'none';
-                    soundOffIcon.style.display = 'block';
-                    musicControl.classList.add('muted');
-                    isMuted = true;
-                    console.log('Music muted');
-                }
-            } catch (e) {
-                console.error('Error toggling music:', e);
+                    isPlaying = true;
+                    console.log('Music playing');
+                }).catch(e => {
+                    console.error('Error playing music:', e);
+                });
             }
         });
 
