@@ -17,23 +17,23 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* ====================================
            CSS VÁLTOZÓK ÉS ALAPBEÁLLÍTÁSOK
            ==================================== */
         :root {
-            --primary-color: #be9c53;
-            --primary-dark: #9a7d3f;
-            --secondary-color: #CEBD88;
+            --primary-color: #71ADBA;
+            --primary-dark: #5a8a94;
+            --secondary-color: #8fc4d0;
             --accent-color: #E14C38;
             --navy-color: #152f51;
             --text-dark: #152f51;
             --text-light: #64748b;
             --bg-light: #fefaf1;
             --bg-white: #ffffff;
-            --border-color: #CEBD88;
+            --border-color: #71ADBA;
             --success-color: #10b981;
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
@@ -56,7 +56,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--bg-light);
@@ -322,14 +322,15 @@
         }
 
         .btn-primary {
-            background: white;
-            color: var(--primary-color);
-            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
         }
 
         .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
         }
 
         .btn-secondary {
@@ -1364,7 +1365,6 @@
         <div class="hero-content">
             <span class="hero-badge">⚓ Közvetlen Tópart</span>
             <h1>Modern Tóparti Nyaraló</h1>
-            <div class="hero-price">Érdeklődj most!</div>
             <p class="hero-description">
                 Abádszalókon a Szalók Yacht Kikötő szomszédságában, közvetlen tóparti nyaraló
                 48 m²-es stéggel, hajókikötési lehetőséggel. Modern acél szerkezet, 4 hálószoba,
