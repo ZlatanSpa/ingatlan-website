@@ -15,7 +15,9 @@
       "Bash(pbcopy)",
       "Bash(ssh:*)",
       "Bash(ssh-keyscan:*)",
-      "Bash(~/.ssh/known_hosts)"
+      "Bash(~/.ssh/known_hosts)",
+      "Bash(curl:*)",
+      "Bash(brew install:*)"
     ],
     "deny": [],
     "ask": []
