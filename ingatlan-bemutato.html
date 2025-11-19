@@ -201,6 +201,62 @@
         }
 
         /* ====================================
+           ZENEI VEZÉRLŐ
+           ==================================== */
+        .music-control {
+            position: fixed;
+            top: 100px;
+            right: 2rem;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(113, 173, 186, 0.3);
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(113, 173, 186, 0.4);
+        }
+
+        .music-control svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .music-control.muted svg {
+            opacity: 0.5;
+        }
+
+        .music-player {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .music-control {
+                top: 80px;
+                right: 1rem;
+                width: 48px;
+                height: 48px;
+            }
+
+            .music-control svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        /* ====================================
            HERO SZEKCIÓ
            ==================================== */
         .hero {
@@ -1346,6 +1402,24 @@
 </head>
 <body>
     <!-- ====================================
+         ZENEI VEZÉRLŐ
+         ==================================== -->
+    <button class="music-control" id="musicControl" aria-label="Zene ki/be kapcsolása">
+        <svg id="soundOnIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <svg id="soundOffIcon" style="display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+    </button>
+
+    <!-- Rejtett YouTube lejátszó -->
+    <div class="music-player" id="musicPlayer"></div>
+
+    <!-- ====================================
          HEADER ÉS NAVIGÁCIÓ
          ==================================== -->
     <header class="header" id="header">
@@ -2454,6 +2528,81 @@
         window.addEventListener('scroll', debounce(() => {
             // Scroll kezelések itt
         }));
+
+        // =====================================
+        // ZENEI VEZÉRLŐ - YOUTUBE API
+        // =====================================
+
+        let player;
+        let isMuted = true;
+
+        // YouTube IFrame API betöltése
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // YouTube player inicializálása
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('musicPlayer', {
+                height: '0',
+                width: '0',
+                videoId: 'Dx5qFachd3A', // Smooth Night Jazz - Relaxing Jazz Music
+                playerVars: {
+                    autoplay: 1,
+                    loop: 1,
+                    controls: 0,
+                    playlist: 'Dx5qFachd3A', // Loop beállításhoz
+                    mute: 1 // Induláskor némítva (böngésző követelmény)
+                },
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            });
+        }
+
+        // Player kész
+        function onPlayerReady(event) {
+            // Automatikus indítás némítva
+            event.target.playVideo();
+            event.target.mute();
+        }
+
+        // Player állapot változás
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                player.playVideo(); // Újraindítás
+            }
+        }
+
+        // Hang ki/be kapcsoló gomb
+        const musicControl = document.getElementById('musicControl');
+        const soundOnIcon = document.getElementById('soundOnIcon');
+        const soundOffIcon = document.getElementById('soundOffIcon');
+
+        musicControl.addEventListener('click', () => {
+            if (!player) return;
+
+            if (isMuted) {
+                player.unMute();
+                player.setVolume(30); // 30% hangerő
+                soundOnIcon.style.display = 'block';
+                soundOffIcon.style.display = 'none';
+                musicControl.classList.remove('muted');
+                isMuted = false;
+            } else {
+                player.mute();
+                soundOnIcon.style.display = 'none';
+                soundOffIcon.style.display = 'block';
+                musicControl.classList.add('muted');
+                isMuted = true;
+            }
+        });
+
+        // Kezdeti állapot beállítása
+        soundOffIcon.style.display = 'none';
+        soundOnIcon.style.display = 'block';
 
         // =====================================
         // CONSOLE ÜZENET
