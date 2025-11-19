@@ -1,0 +1,2410 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eladó modern lakás Budapest belvárosában - 3 szoba, 85 m², panorámás kilátás">
+    <meta name="keywords" content="eladó lakás, Budapest, ingatlan, 3 szobás lakás">
+
+    <!-- Open Graph meta tagek közösségi médiához -->
+    <meta property="og:title" content="Panorámás Belvárosi Lakás - 85 m²">
+    <meta property="og:description" content="Modern, felújított 3 szobás lakás a belvárosban, lélegzetelállító kilátással">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200">
+
+    <title>Panorámás Belvárosi Lakás | 85 m² | 89.5 M Ft</title>
+
+    <style>
+        /* ====================================
+           CSS VÁLTOZÓK ÉS ALAPBEÁLLÍTÁSOK
+           ==================================== */
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #0ea5e9;
+            --accent-color: #f59e0b;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+        }
+
+        /* Reset és alapbeállítások */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        /* ====================================
+           HEADER ÉS NAVIGÁCIÓ
+           ==================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Hamburger menü mobil nézethez */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ====================================
+           HERO SZEKCIÓ
+           ==================================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(14, 165, 233, 0.6) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-price {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-description {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        /* ====================================
+           GYORS ÁTTEKINTÉS SZEKCIÓ
+           ==================================== */
+        .quick-overview {
+            max-width: 1400px;
+            margin: -80px auto 0;
+            padding: 0 2rem 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .overview-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+
+        .overview-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .overview-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .overview-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* ====================================
+           KÖZÖS SZEKCIÓ STÍLUSOK
+           ==================================== */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ====================================
+           LEÍRÁS SZEKCIÓ
+           ==================================== */
+        .description-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .description-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .description-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .description-text h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+        }
+
+        .features-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .features-list li:hover {
+            background: white;
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .description-image {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            height: 100%;
+            min-height: 500px;
+        }
+
+        .description-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ====================================
+           KÉPGALÉRIA SZEKCIÓ
+           ==================================== */
+        .gallery {
+            background: var(--bg-white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: var(--border-radius);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: white;
+            color: var(--text-dark);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover {
+            background: var(--bg-light);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            color: var(--text-dark);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .lightbox-prev {
+            left: -70px;
+        }
+
+        .lightbox-next {
+            right: -70px;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--bg-light);
+        }
+
+        /* ====================================
+           TULAJDONSÁGOK TÁBLÁZAT
+           ==================================== */
+        .properties {
+            background: var(--bg-light);
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .property-group {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .property-group h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .property-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .property-row:last-child {
+            border-bottom: none;
+        }
+
+        .property-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .property-value {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* ====================================
+           INGATLANKÖZVETÍTŐ BEMUTATKOZÁS
+           ==================================== */
+        .agent-intro {
+            background: var(--bg-white);
+        }
+
+        .agent-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .agent-video-wrapper {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            aspect-ratio: 16/9;
+            background: var(--bg-light);
+        }
+
+        .agent-video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .agent-details {
+            padding: 2rem;
+        }
+
+        .agent-name {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .agent-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .agent-bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .agent-bio p {
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .agent-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .agent-stat:hover {
+            background: white;
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .agent-stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .agent-credentials {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .credential-item:hover {
+            background: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .credential-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* ====================================
+           LOKÁCIÓ SZEKCIÓ
+           ==================================== */
+        .location {
+            background: var(--bg-light);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .map-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            height: 500px;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .location-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .location-details {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .location-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .location-item:hover {
+            background: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .location-item-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .location-item-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .location-item-content p {
+            color: var(--text-light);
+        }
+
+        /* ====================================
+           KAPCSOLATFELVÉTEL SZEKCIÓ
+           ==================================== */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .contact .section-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .contact .section-title,
+        .contact .section-subtitle {
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+        }
+
+        .form-checkbox input {
+            width: auto;
+            margin-top: 0.3rem;
+        }
+
+        .form-checkbox label {
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .form-submit:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ====================================
+           FOOTER
+           ==================================== */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ====================================
+           RESZPONZÍV BREAKPOINTOK
+           ==================================== */
+
+        /* Tablet nézet */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transition: var(--transition);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .description-content,
+            .agent-content,
+            .location-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .agent-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .overview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobil nézet */
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .hero {
+                margin-top: 70px;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .agent-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-overview {
+                margin-top: -60px;
+                padding: 0 1rem 2rem;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        /* Kis mobil nézet */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-price {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .overview-card {
+                padding: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* ====================================
+           PRINT STÍLUSOK
+           ==================================== */
+        @media print {
+            .header,
+            .hamburger,
+            .scroll-indicator,
+            .lightbox,
+            .contact-form,
+            .footer {
+                display: none;
+            }
+
+            .hero {
+                height: auto;
+                margin-top: 0;
+            }
+
+            .hero-overlay {
+                opacity: 0.5;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+                page-break-inside: avoid;
+            }
+
+            body {
+                background: white;
+            }
+        }
+
+        /* ====================================
+           ANIMÁCIÓK ÉS EXTRA EFFEKTEK
+           ==================================== */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Loading animáció */
+        .lazy-loading {
+            background: linear-gradient(90deg, var(--bg-light) 25%, #f0f0f0 50%, var(--bg-light) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ====================================
+         HEADER ÉS NAVIGÁCIÓ
+         ==================================== -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Prémium Ingatlan
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Kezdőlap</a></li>
+                <li><a href="#about">Részletek</a></li>
+                <li><a href="#gallery">Galéria</a></li>
+                <li><a href="#properties">Tulajdonságok</a></li>
+                <li><a href="#agent">Ingatlanközvetítő</a></li>
+                <li><a href="#location">Lokáció</a></li>
+                <li><a href="#contact" class="nav-cta">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Kapcsolat
+                </a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Menü megnyitása">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ====================================
+         HERO SZEKCIÓ
+         ==================================== -->
+    <section class="hero" id="home">
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1920&q=80"
+             alt="Panorámás lakás kilátással"
+             class="hero-background"
+             loading="eager">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <span class="hero-badge">✨ Exkluzív Ajánlat</span>
+            <h1>Panorámás Belvárosi Lakás</h1>
+            <div class="hero-price">89.500.000 Ft</div>
+            <p class="hero-description">
+                Modern, felújított 3 szobás lakás Budapest szívében,
+                lélegzetelállító kilátással a városra. Tökéletes választás
+                igényes vásárlóknak.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                    Érdeklődom
+                </a>
+                <a href="#gallery" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    Képek megtekintése
+                </a>
+            </div>
+        </div>
+
+        <a href="#overview" class="scroll-indicator" aria-label="Görgetés lefelé">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- ====================================
+         GYORS ÁTTEKINTÉS
+         ==================================== -->
+    <section class="quick-overview" id="overview">
+        <div class="overview-grid">
+            <div class="overview-card">
+                <div class="overview-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    </svg>
+                </div>
+                <div class="overview-label">Alapterület</div>
+                <div class="overview-value">85 m²</div>
+            </div>
+
+            <div class="overview-card">
+                <div class="overview-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <div class="overview-label">Szobák</div>
+                <div class="overview-value">3 szoba</div>
+            </div>
+
+            <div class="overview-card">
+                <div class="overview-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <div class="overview-label">Lokáció</div>
+                <div class="overview-value">V. kerület</div>
+            </div>
+
+            <div class="overview-card">
+                <div class="overview-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <div class="overview-label">Típus</div>
+                <div class="overview-value">Lakás</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         RÉSZLETES LEÍRÁS
+         ==================================== -->
+    <section class="section" id="about">
+        <div class="section-header">
+            <span class="section-badge">Részletek</span>
+            <h2 class="section-title">Az Ingatlan Bemutatása</h2>
+            <p class="section-subtitle">
+                Fedezd fel ezt a kivételes ingatlant, amely a modern városi élet
+                és a kényelem tökéletes kombinációja
+            </p>
+        </div>
+
+        <div class="description-content">
+            <div class="description-text">
+                <p>
+                    <strong>Üdvözöljük ebben a lenyűgöző, 85 négyzetméteres lakásban</strong>,
+                    amely Budapest egyik legkeresettebb részén, az V. kerületben található.
+                    Ez a kivételes ingatlan tökéletes választás azok számára, akik a városi
+                    élet dinamizmusa mellett értékelik a nyugalmat és a kényelmet.
+                </p>
+
+                <p>
+                    A lakás 2023-ban átesett egy <strong>teljes körű, prémium minőségű felújításon</strong>,
+                    amely során minden részletet a legapróbb részletekig megterveztek. A modern
+                    berendezések, a kiváló minőségű anyagok és az átgondolt alaprajz garantálja,
+                    hogy ez a lakás minden igényt kielégít.
+                </p>
+
+                <h3>🌟 Kiemelt Tulajdonságok</h3>
+
+                <ul class="features-list">
+                    <li>
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Panorámás kilátás</strong> - A 8. emeleti elhelyezkedés
+                            csodálatos kilátást biztosít a város fölött
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M2 12h20"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Déli tájolás</strong> - Napsütötte terek egész nap,
+                            optimális természetes megvilágítás
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="15" rx="2"/>
+                                <polyline points="17 2 12 7 7 2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>2 erkély</strong> - Összesen 12 m² szabadtéri terület,
+                            tökéletes relaxáláshoz
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Azonnal költözhető</strong> - Teljesen felújított,
+                            beköltözhető állapot
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Modern biztonsági rendszer</strong> - Portaszolgálat,
+                            kamerás megfigyelés, riasztó
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Garázsbeálló</strong> - Saját zárt garázsbeálló
+                            az épület alatt
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="description-image">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+                     alt="Modern nappali design"
+                     loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         KÉPGALÉRIA
+         ==================================== -->
+    <section class="section gallery" id="gallery">
+        <div class="section-header">
+            <span class="section-badge">Galéria</span>
+            <h2 class="section-title">Képek az Ingatlanról</h2>
+            <p class="section-subtitle">
+                Tekintse meg részletesen ezt a csodálatos lakást
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" data-index="0">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80"
+                     alt="Tágas nappali"
+                     loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-caption">Tágas nappali</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-index="1">
+                <img src="https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=800&q=80"
+                     alt="Modern konyha"
+                     loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-caption">Modern konyha</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-index="2">
+                <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80"
+                     alt="Főhálószoba"
+                     loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-caption">Főhálószoba</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-index="3">
+                <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"
+                     alt="Fürdőszoba"
+                     loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-caption">Luxus fürdőszoba</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-index="4">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+                     alt="Erkély kilátás"
+                     loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-caption">Erkély kilátással</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-index="5">
+                <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&q=80"
+                     alt="Dolgozószoba"
+                     loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-caption">Home office szoba</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox a képekhez -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Bezárás">×</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Előző kép">‹</button>
+            <img src="" alt="" id="lightboxImage">
+            <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Következő kép">›</button>
+        </div>
+    </div>
+
+    <!-- ====================================
+         TULAJDONSÁGOK TÁBLÁZAT
+         ==================================== -->
+    <section class="section properties" id="properties">
+        <div class="section-header">
+            <span class="section-badge">Tulajdonságok</span>
+            <h2 class="section-title">Műszaki Adatok</h2>
+            <p class="section-subtitle">
+                Részletes információk az ingatlan jellemzőiről
+            </p>
+        </div>
+
+        <div class="properties-grid">
+            <div class="property-group">
+                <h3>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    </svg>
+                    Alapadatok
+                </h3>
+                <div class="property-row">
+                    <span class="property-label">Típus</span>
+                    <span class="property-value">Lakás</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Alapterület</span>
+                    <span class="property-value">85 m²</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Szobák száma</span>
+                    <span class="property-value">3 szoba</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Félszobák</span>
+                    <span class="property-value">1</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Erkély</span>
+                    <span class="property-value">2 db (összesen 12 m²)</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Emelet</span>
+                    <span class="property-value">8. emelet</span>
+                </div>
+            </div>
+
+            <div class="property-group">
+                <h3>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    </svg>
+                    Épület adatok
+                </h3>
+                <div class="property-row">
+                    <span class="property-label">Építés éve</span>
+                    <span class="property-value">2015</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Felújítás éve</span>
+                    <span class="property-value">2023</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Állapot</span>
+                    <span class="property-value">Újszerű, felújított</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Tájolás</span>
+                    <span class="property-value">Dél</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Kilátás</span>
+                    <span class="property-value">Panorámás városra néző</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Lift</span>
+                    <span class="property-value">Van</span>
+                </div>
+            </div>
+
+            <div class="property-group">
+                <h3>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                    Közművek és fűtés
+                </h3>
+                <div class="property-row">
+                    <span class="property-label">Fűtés típusa</span>
+                    <span class="property-value">Távfűtés + Klíma</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Víz</span>
+                    <span class="property-value">Közüzemi</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Csatorna</span>
+                    <span class="property-value">Közüzemi</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Gáz</span>
+                    <span class="property-value">Közüzemi</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Elektromosság</span>
+                    <span class="property-value">230V</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Internet</span>
+                    <span class="property-value">Optikai</span>
+                </div>
+            </div>
+
+            <div class="property-group">
+                <h3>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                    </svg>
+                    Extra szolgáltatások
+                </h3>
+                <div class="property-row">
+                    <span class="property-label">Parkolás</span>
+                    <span class="property-value">Saját garázsbeálló</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Biztonság</span>
+                    <span class="property-value">24/7 portaszolgálat</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Háziállat</span>
+                    <span class="property-value">Megengedett</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Tárolás</span>
+                    <span class="property-value">Tárolóhelyiség</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Akadálymentesített</span>
+                    <span class="property-value">Igen</span>
+                </div>
+                <div class="property-row">
+                    <span class="property-label">Energetikai besorolás</span>
+                    <span class="property-value">B+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         INGATLANKÖZVETÍTŐ BEMUTATKOZÁS
+         ==================================== -->
+    <section class="section agent-intro" id="agent">
+        <div class="section-header">
+            <span class="section-badge">Ingatlanközvetítő</span>
+            <h2 class="section-title">Személyes Bemutatkozás</h2>
+            <p class="section-subtitle">
+                Engedje meg, hogy bemutatkozzam és segítsek megtalálni álmai otthonát
+            </p>
+        </div>
+
+        <div class="agent-content">
+            <div class="agent-video-wrapper">
+                <a href="https://youtu.be/IOtwL2zgJ5k" target="_blank" rel="noopener noreferrer"
+                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(14, 165, 233, 0.95)); text-decoration: none; z-index: 10; transition: var(--transition);"
+                   onmouseover="this.style.background='linear-gradient(135deg, rgba(37, 99, 235, 1), rgba(14, 165, 233, 1))'"
+                   onmouseout="this.style.background='linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(14, 165, 233, 0.95))'">
+                    <div style="text-align: center; color: white;">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="white" style="margin: 0 auto 1rem;">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Bemutatkozó Videó</h4>
+                        <p style="font-size: 1rem; opacity: 0.9;">Kattintson a megtekintéshez YouTube-on</p>
+                    </div>
+                </a>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/IOtwL2zgJ5k?rel=0&modestbranding=1"
+                    title="Ingatlanközvetítő bemutatkozó videó"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    style="position: relative; z-index: 1;">
+                </iframe>
+            </div>
+
+            <div class="agent-details">
+                <h3 class="agent-name">Kovács Péter</h3>
+                <p class="agent-title">Vezető Ingatlanközvetítő & Értékbecslő Szakértő</p>
+
+                <div class="agent-bio">
+                    <p>
+                        <strong>Üdvözlöm!</strong> Már több mint 12 éve foglalkozom ingatlankozvetítéssel,
+                        és ez idő alatt több mint 300 családnak segítettem megtalálni az
+                        álmaik otthonát Budapest területén.
+                    </p>
+                    <p>
+                        A szakmámban a <strong>személyre szabott szolgáltatás</strong> és a
+                        <strong>long-term partnerség</strong> a legfontosabb számomra. Nem csak
+                        eladni szeretnék, hanem segíteni Önnek abban, hogy olyan otthont találjon,
+                        amely tökéletesen megfelel az Ön és családja igényeinek.
+                    </p>
+                    <p>
+                        Profi csapatommal <strong>teljes körű szolgáltatást</strong> nyújtunk:
+                        az ingatlan kiválasztásától a szerződéskötésig, az értékbecsléstől
+                        a finanszírozásig mindent egy kézből!
+                    </p>
+                </div>
+
+                <div class="agent-stats">
+                    <div class="agent-stat">
+                        <div class="agent-stat-number">12+</div>
+                        <div class="agent-stat-label">Év tapasztalat</div>
+                    </div>
+                    <div class="agent-stat">
+                        <div class="agent-stat-number">300+</div>
+                        <div class="agent-stat-label">Sikeres ügylet</div>
+                    </div>
+                    <div class="agent-stat">
+                        <div class="agent-stat-number">98%</div>
+                        <div class="agent-stat-label">Elégedett ügyfél</div>
+                    </div>
+                </div>
+
+                <div class="agent-credentials">
+                    <div class="credential-item">
+                        <div class="credential-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Certifikált Ingatlanközvetítő</strong>
+                            <div style="font-size: 0.9rem; color: var(--text-light);">MAIKÁR tagság, OKJ képesítés</div>
+                        </div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Ingatlan-értékbecslő Szakértő</strong>
+                            <div style="font-size: 0.9rem; color: var(--text-light);">Kamarai igazolvánnyal rendelkező értékbecslő</div>
+                        </div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="8.5" cy="7" r="4"/>
+                                <polyline points="17 11 19 13 23 9"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Folyamatos Továbbképzés</strong>
+                            <div style="font-size: 0.9rem; color: var(--text-light);">Évenként több szakmai tréning és konferencia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         LOKÁCIÓ
+         ==================================== -->
+    <section class="section location" id="location">
+        <div class="section-header">
+            <span class="section-badge">Lokáció</span>
+            <h2 class="section-title">Elhelyezkedés</h2>
+            <p class="section-subtitle">
+                Budapest szívében, minden fontos szolgáltatás közelében
+            </p>
+        </div>
+
+        <div class="location-content">
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <p style="margin-top: 1rem;">Budapest V. kerület<br>Belváros-Lipótváros</p>
+                </div>
+            </div>
+
+            <div class="location-info">
+                <h3>📍 Cím: Budapest V. kerület</h3>
+                <p style="color: var(--text-light); margin-bottom: 2rem;">
+                    Kiváló lokáció a belvárosban, minden szolgáltatás gyalogosan elérhető
+                </p>
+
+                <div class="location-details">
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div class="location-item-content">
+                            <h4>Tömegközlekedés</h4>
+                            <p>M3 metró 3 perc, villamosok 2 perc sétára</p>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            </svg>
+                        </div>
+                        <div class="location-item-content">
+                            <h4>Bevásárlás</h4>
+                            <p>Nagyobb bevásárlóközpontok 5-10 percre, kis boltok a közelben</p>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <div class="location-item-content">
+                            <h4>Oktatás</h4>
+                            <p>Óvoda, általános iskola és középiskolák a környéken</p>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="location-item-content">
+                            <h4>Egészségügy</h4>
+                            <p>Kórházak, szakrendelők 10 percen belül elérhetők</p>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                        </div>
+                        <div class="location-item-content">
+                            <h4>Szabadidő</h4>
+                            <p>Parkok, éttermek, kávézók, kulturális helyszínek a közelben</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         KAPCSOLATFELVÉTEL
+         ==================================== -->
+    <section class="section contact" id="contact">
+        <div class="section-header">
+            <span class="section-badge">Kapcsolat</span>
+            <h2 class="section-title">Vegye fel velünk a kapcsolatot</h2>
+            <p class="section-subtitle">
+                Érdeklődik az ingatlan iránt? Kérjen időpontot megtekintésre!
+            </p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3>Telefonon</h3>
+                    <p>+36 20 123 4567</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Hétfő-Péntek: 9:00-18:00</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <h3>Email címen</h3>
+                    <p>info@premium-ingatlan.hu</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">24 órán belül válaszolunk</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Irodánkban</h3>
+                    <p>1052 Budapest, Váci utca 45.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Időpont egyeztetés szükséges</p>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Név *</label>
+                    <input type="text" id="name" name="name" required placeholder="Teljes név">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email cím *</label>
+                    <input type="email" id="email" name="email" required placeholder="pelda@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefonszám *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+36 20 123 4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="visitDate">Megtekintés időpontja</label>
+                    <select id="visitDate" name="visitDate">
+                        <option value="">Válasszon időpontot</option>
+                        <option value="morning">Délelőtt (9:00-12:00)</option>
+                        <option value="afternoon">Délután (12:00-16:00)</option>
+                        <option value="evening">Este (16:00-18:00)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Üzenet</label>
+                    <textarea id="message" name="message" placeholder="Írja le kérdéseit vagy megjegyzéseit..."></textarea>
+                </div>
+
+                <div class="form-group form-checkbox">
+                    <input type="checkbox" id="gdpr" name="gdpr" required>
+                    <label for="gdpr">
+                        Elfogadom az adatvédelmi szabályzatot és hozzájárulok adataim kezeléséhez *
+                    </label>
+                </div>
+
+                <button type="submit" class="form-submit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                    Üzenet küldése
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ====================================
+         FOOTER
+         ==================================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Prémium Ingatlan</h3>
+                <p>Az Ön megbízható partnere az ingatlanpiacon. Professzionális szolgáltatás, személyre szabott megoldások.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Gyors linkek</h3>
+                <a href="#home">Kezdőlap</a>
+                <a href="#about">Részletek</a>
+                <a href="#gallery">Galéria</a>
+                <a href="#agent">Ingatlanközvetítő</a>
+                <a href="#contact">Kapcsolat</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Jogi információk</h3>
+                <a href="#">Adatvédelmi szabályzat</a>
+                <a href="#">Általános szerződési feltételek</a>
+                <a href="#">Cookie szabályzat</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Kapcsolat</h3>
+                <p>📞 +36 20 123 4567</p>
+                <p>✉️ info@premium-ingatlan.hu</p>
+                <p>📍 1052 Budapest, Váci utca 45.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Prémium Ingatlan. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+
+    <!-- ====================================
+         JAVASCRIPT
+         ==================================== -->
+    <script>
+        // =====================================
+        // NAVIGÁCIÓ ÉS HEADER KEZELÉS
+        // =====================================
+
+        // Header háttér változtatása scroll-nál
+        const header = document.getElementById('header');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger menü működése
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Menü bezárása kattintáskor
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll minden anchor linkhez
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // =====================================
+        // LIGHTBOX GALÉRIA MŰKÖDÉSE
+        // =====================================
+
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        let currentImageIndex = 0;
+        const images = [];
+
+        // Képek összegyűjtése
+        galleryItems.forEach((item, index) => {
+            const img = item.querySelector('img');
+            images.push({
+                src: img.src,
+                alt: img.alt
+            });
+
+            item.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImage.src = images[index].src;
+            lightboxImage.alt = images[index].alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            lightboxImage.src = images[currentImageIndex].src;
+            lightboxImage.alt = images[currentImageIndex].alt;
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            lightboxImage.src = images[currentImageIndex].src;
+            lightboxImage.alt = images[currentImageIndex].alt;
+        }
+
+        // Event listenerek
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', showPrevImage);
+        lightboxNext.addEventListener('click', showNextImage);
+
+        // Bezárás háttérre kattintva
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Billentyűzet navigáció
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrevImage();
+            if (e.key === 'ArrowRight') showNextImage();
+        });
+
+        // =====================================
+        // FORM VALIDÁCIÓ ÉS KÜLDÉS
+        // =====================================
+
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Form adatok összegyűjtése
+            const formData = new FormData(contactForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Validáció
+            if (!data.name || !data.email || !data.phone) {
+                alert('Kérjük töltse ki a kötelező mezőket!');
+                return;
+            }
+
+            if (!data.gdpr) {
+                alert('Kérjük fogadja el az adatvédelmi szabályzatot!');
+                return;
+            }
+
+            // Email formátum ellenőrzés
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Kérjük adjon meg érvényes email címet!');
+                return;
+            }
+
+            // Telefon formátum ellenőrzés
+            const phoneRegex = /^[\d\s\+\-\(\)]+$/;
+            if (!phoneRegex.test(data.phone)) {
+                alert('Kérjük adjon meg érvényes telefonszámot!');
+                return;
+            }
+
+            // Siker üzenet
+            alert('Köszönjük megkeresését! Hamarosan felvesszük Önnel a kapcsolatot.');
+            contactForm.reset();
+
+            // Itt valós alkalmazásban az adatokat elküldenéd egy szervernek
+            console.log('Form adatok:', data);
+        });
+
+        // =====================================
+        // LAZY LOADING KÉPEKHEZ
+        // =====================================
+
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('fade-in');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // =====================================
+        // SCROLL ANIMÁCIÓK
+        // =====================================
+
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.overview-card, .gallery-item, .property-group');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '0';
+                        entry.target.style.transform = 'translateY(20px)';
+
+                        setTimeout(() => {
+                            entry.target.style.transition = 'all 0.6s ease-out';
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, 100);
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            elements.forEach(el => {
+                observer.observe(el);
+            });
+        };
+
+        // Animációk inicializálása
+        window.addEventListener('load', animateOnScroll);
+
+        // =====================================
+        // AKTÍV NAV ELEM JELÖLÉSE
+        // =====================================
+
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // =====================================
+        // TELJESÍTMÉNY OPTIMALIZÁLÁS
+        // =====================================
+
+        // Debounce függvény scroll eventekhez
+        function debounce(func, wait = 10, immediate = true) {
+            let timeout;
+            return function() {
+                const context = this, args = arguments;
+                const later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                const callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+
+        // Optimalizált scroll események
+        window.addEventListener('scroll', debounce(() => {
+            // Scroll kezelések itt
+        }));
+
+        // =====================================
+        // CONSOLE ÜZENET
+        // =====================================
+
+        console.log('%c🏠 Prémium Ingatlan Weboldal', 'color: #2563eb; font-size: 20px; font-weight: bold;');
+        console.log('%cKészítve modern HTML5, CSS3 és JavaScript technológiákkal', 'color: #64748b; font-size: 12px;');
+    </script>
+</body>
+</html>
