@@ -265,6 +265,35 @@
             }
         }
 
+        .hero-quote {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInQuote 1.5s ease-out 0.8s forwards;
+            font-weight: 300;
+        }
+
+        .hero-quote-author {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            animation: fadeInQuote 1.5s ease-out 1.2s forwards;
+        }
+
+        @keyframes fadeInQuote {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .hero-badge {
             display: inline-block;
             background: rgba(255, 255, 255, 0.2);
@@ -1365,11 +1394,8 @@
         <div class="hero-content">
             <span class="hero-badge">⚓ Közvetlen Tópart</span>
             <h1>Modern Tóparti Nyaraló</h1>
-            <p class="hero-description">
-                Abádszalókon a Szalók Yacht Kikötő szomszédságában, közvetlen tóparti nyaraló
-                48 m²-es stéggel, hajókikötési lehetőséggel. Modern acél szerkezet, 4 hálószoba,
-                2 fürdő + vendég WC. Gyönyörű naplemenetekkel.
-            </p>
+            <p class="hero-quote">"A nyaralás alatt nem telik az élet, csak gazdagszik; minden egy pillanatra megáll, mi pedig élvezhetjük a megállított időt."</p>
+            <p class="hero-quote-author">— Veres Attila</p>
 
             <div class="hero-cta-group">
                 <a href="#contact" class="btn btn-primary">
@@ -1462,10 +1488,15 @@
         <div class="description-content">
             <div class="description-text">
                 <p>
-                    <strong>Üdvözöljük Abádszalókon, a Tisza-tó partján</strong>,
-                    közvetlenül a Szalók Yacht Kikötő szomszédságában található modern nyaralóban.
+                    <strong>Abádszalókon a Szalók Yacht Kikötő szomszédságában</strong>,
+                    közvetlen tóparti nyaraló 48 m²-es stéggel, hajókikötési lehetőséggel.
+                    Modern acél szerkezet, 4 hálószoba, 2 fürdő + vendég WC. Gyönyörű naplemenetekkel.
+                </p>
+
+                <p>
                     Ez a kivételes ingatlan tökéletes választás azok számára, akik szeretik a vízisportokat,
-                    a természetet és az aktív kikapcsolódást.
+                    a természetet és az aktív kikapcsolódást. Közvetlenül a prémium Szalók Yacht Kikötő
+                    mellett található, ideális elhelyezkedéssel a Tisza-tó partján.
                 </p>
 
                 <p>
